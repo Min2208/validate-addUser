@@ -3,20 +3,20 @@ package com.codegym.model;
 import javax.validation.constraints.*;
 
 public class User{
-    @Min(value = 18,message = "Tuoi >= 18")
+    @Min(value = 18)
     private int age;
 
-    @NotEmpty(message = "Ten phai co it nhat 5 ky tu")
-    @Size(min = 5,max = 45,message = "ten nam trong khoang 5-45")
+    @NotEmpty
+    @Size(min = 5,max = 45)
     private String name;
 
 
-    @Email(message = "email phai dung quy tac")
-    @NotEmpty(message = "Hay nhap email")
+    @Email
+    @NotEmpty
     private String email;
 
-    @NotEmpty(message = "hay nhap phone")
-    @Pattern(regexp = "(\\\\+84|0)[0-9]{9}", message = "Hay nhap dung so phone")
+    @NotEmpty
+    @Pattern(regexp = "(\\\\+84|0)[0-9]{9}")
     private String phone;
 
     public int getAge() {

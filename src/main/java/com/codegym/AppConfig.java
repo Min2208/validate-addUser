@@ -60,6 +60,11 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
     public UserService userService(){
         return new UserServiceImpl();
     }
-
+    @Bean
+    public MessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasenames("ValidationMessages");
+        return messageSource;
+    }
 
 }
