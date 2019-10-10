@@ -24,9 +24,8 @@ public class FormController{
     }
 
 
-    @PostMapping("/add")
+    @PostMapping("/")
     public ModelAndView addUser(@Validated @ModelAttribute("user") User user, BindingResult bindingResult){
-        System.out.println(bindingResult.hasFieldErrors());
         if (bindingResult.hasFieldErrors()){
             return new ModelAndView("index");
         }else {
